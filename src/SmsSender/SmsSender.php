@@ -16,9 +16,13 @@ class SmsSender extends \CApplicationComponent implements SmsSenderServiceInterf
 		return $this->service->sendMessage($phones, $message);
 	}
 
+	public function setOptions($options) {
+		return $this->service->setOptions($options);
+	}
+
 	public function renderMessage($view, array $data = array()) {
-        $controller = new CController('SmsSender');
-        $viewPath = Yii::app()->getBasePath() . DIRECTORY_SEPARATOR . 'views';
+        $controller = new \CController('SmsSender');
+        $viewPath = \Yii::app()->getBasePath() . DIRECTORY_SEPARATOR . 'views';
         $viewFile   = $controller->resolveViewFile($view, $viewPath, $viewPath);
         $body = $controller->renderInternal($viewFile, $data, true);
 

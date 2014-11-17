@@ -12,11 +12,23 @@ class SmscService implements SmsSenderServiceInterface {
 	protected $sender = '';
 
 	public function __construct($options) {
+		$this->setOptions($options);
+	}
+
+	public function setOptions($options) {
 		$this->options = $options;
 
-		$this->login = $this->options['login'];
-		$this->password = $this->options['password'];
-		$this->sender = $this->options['sender'];
+		if(isset($this->options['login'])) {
+			$this->login = $this->options['login'];
+		}
+
+		if(isset($this->options['password'])) {
+			$this->password = $this->options['password'];	
+		}
+		
+		if(isset($this->options['sender'])) {
+			$this->sender = $this->options['sender'];
+		}
 	}
 
 	public function sendMessage($phones, $message) {
