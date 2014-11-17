@@ -13,8 +13,8 @@
         >
 
     <testsuites>
-        <testsuite name="MizzleGroup Parser Test Suite">
-            <directory>./src/MizzleGroup/Parser/Tests/</directory>
+        <testsuite name="Test Suite">
+            <directory>./\src/SmsSender/Tests/</directory>
         </testsuite>
     </testsuites>
 
@@ -22,7 +22,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>./src/MizzleGroup/Parser/Tests/</directory>
+                <directory>./\src/SmsSender/Tests/</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
